@@ -22,7 +22,7 @@ public class Carro {
  * @param fila;
  * @param columna;
  */
-//Constructor que solo llama a la ubicacion del carro, nos podria servir para heredar la posicion a las hijas y usarla en otras clases y metodos.
+//constructor que solo llama a la ubicacion del carro, nos podria servir para heredar la posicion a las hijas y usarla en otras clases y metodos.
 	public Carro() {
 		fila = (int) (Math.random() * 15);
 		columna = (int) (Math.random() * 15);

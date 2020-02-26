@@ -23,7 +23,7 @@ public class Trupalla extends Carro {
 	 * 
 	 */
 	
-	//constructor por defecto, nos entragara la ubicacion y el nivel de armadura de la Trupalla
+	//Constructor por defecto, nos entragara la ubicacion y el nivel de armadura de la Trupalla
 	public Trupalla () {
 		super();
 		nivelArmadura = (int)Math.random()*5+1;

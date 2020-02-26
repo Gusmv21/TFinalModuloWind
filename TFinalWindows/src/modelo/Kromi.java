@@ -19,7 +19,7 @@ public class Kromi extends Carro{
 	 * @param marca;
 	 * 
 	 */
-//constructor por defecto de Kromi nos entragara su posicion.
+//Constructor por defecto de Kromi nos entragara su posicion.
 	public Kromi () {
 		super();
 	}
