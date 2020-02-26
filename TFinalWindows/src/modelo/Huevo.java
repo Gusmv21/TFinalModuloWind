@@ -18,6 +18,8 @@ public class Huevo {
 	 * @param columna;
 	 * @param puntaje;
 	 */
+
+//constructor con todos los atributos que puede tomar la clase Huevo.	
 	public Huevo(int fila, int columna, int puntaje) {
 		this.fila = fila;
 		this.columna = columna;
