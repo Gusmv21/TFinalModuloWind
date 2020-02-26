@@ -125,7 +125,7 @@ public class EjecutableCamaraSecreta {
 			} catch (Exception e) {
 				escribir("Error..Ingrese un valor entero");
 				salida = false;
-			}					
+			}			//falta agregar un catch		
 		}while(!salida);
 		
 		return g;
