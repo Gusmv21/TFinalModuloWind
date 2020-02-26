@@ -17,7 +17,7 @@ public class Caguano extends Carro {
 	 * @param colorconfeti;
 	 * 
 	 */	
-	//constructor que nos dara la posicion de Caguano heredada por Carro.
+	//Constructor que nos dara la posicion de Caguano heredada por Carro.
 	public Caguano () {
 		super();
 	}

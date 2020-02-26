@@ -76,5 +76,5 @@ public class Carro {
 		return "Carro [Cantidad Ocupantes: " + cantOcupantes + ", Fecha Ingreso Institucion: " + fechaIngresoInstitucion 
 			+ ", ubicacion: ("+fila+","+columna+")";
 	}
-	//
+	
 }

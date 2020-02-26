@@ -53,5 +53,5 @@ public class Huevo {
 	public String toString() {
 		return "Huevo [fila=" + fila + ", columna=" + columna + ", puntaje=" + puntaje + "]";
 	}
-	//prueba
+	
 }
