@@ -16,17 +16,19 @@ public class Carro {
 	private int columna;
 
 /**
- *  Constructor del objeto Carro
+ *  Constructores del objeto Carro
  * @param cantOcupantes;
  * @param fechaIngresoInstitucion
  * @param fila;
  * @param columna;
  */
-
+//Constructor que solo llama a la ubicacion del carro, nos podria servir para heredar la posicion a las hijas y usarla en otras clases y metodos.
 	public Carro() {
 		fila = (int) (Math.random() * 15);
 		columna = (int) (Math.random() * 15);
 	}
+	
+//Constructor de Carro que contiene todos los atributos que este puede tener.
 	public Carro(int cantOcupantes, String fechaIngresoInstitucion) {
 		this.cantOcupantes = cantOcupantes;
 		this.fechaIngresoInstitucion = fechaIngresoInstitucion;

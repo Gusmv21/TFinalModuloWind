@@ -17,11 +17,18 @@ public class Trupalla extends Carro {
 	
 	
 	/**
-	 *  Constructor del objeto Trupalla.
+	 *  Constructores del objeto Trupalla.
 	 * @param nivelArmadura;
 	 * @param nombreManipulador;
 	 * 
 	 */
+	
+	//constructor por defecto, nos entragara la ubicacion y el nivel de armadura de la Trupalla
+	public Trupalla () {
+		super();
+		nivelArmadura = (int)Math.random()*5+1;
+	}
+	//Constructor con todos los atributos que lleva la clase Trupalla inclusive los heredados.
 	public Trupalla(int cantOcupantes, String fechaIngresoInstitucion, String nombreManipulador) {
 		super(cantOcupantes, fechaIngresoInstitucion);
 		nivelArmadura = (int)Math.random()*5+1;

@@ -14,11 +14,16 @@ public class Kromi extends Carro{
 	
 	
 	/**
-	 *  Constructor del objeto Kromi.
+	 *  Constructores del objeto Kromi.
 	 * @param anoFabricacion;
 	 * @param marca;
 	 * 
 	 */
+//constructor por defecto de Kromi nos entragara su posicion.
+	public Kromi () {
+		super();
+	}
+//Constructor de Kromi contiene todos los atributos, inclusive los heredados.	
 	public Kromi(int cantOcupantes, String fechaIngresoInstitucion, 
 			int anoFabricacion, String marca) {
 		super(cantOcupantes, fechaIngresoInstitucion);

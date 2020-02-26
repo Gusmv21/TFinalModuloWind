@@ -12,11 +12,16 @@ public class Caguano extends Carro {
 	private String colorConfeti;
 	
 	/**
-	 *  Constructor del objeto Caguano.
+	 *  Constructores del objeto Caguano.
 	 * @param alcanceTiro;
 	 * @param colorconfeti;
 	 * 
-	 */				
+	 */	
+	//Constructor que nos dara la posicion de Caguano heredada por Carro.
+	public Caguano () {
+		super();
+	}
+	//constructor con todos los atributos que contiene Caguano.
 	public Caguano(int cantOcupantes, String fechaIngresoInstitucion,
 			int alcanceTiro, String colorConfeti){
 		super(cantOcupantes, fechaIngresoInstitucion);
