@@ -3,12 +3,14 @@
  */
 package modelo;
 
+import interfaces.IImprimeObjeto;
+
 /**
  * @author Gonzalo Guzman/Gustavo Morales/ Paolo Mancini /Sebastian Ramirez 
  * Clase hija Kromi.
  */
 
-public class Kromi extends Carro{
+public class Kromi extends Carro implements IImprimeObjeto{
 	private int anoFabricacion;
 	private String marca;
 	
@@ -20,13 +22,13 @@ public class Kromi extends Carro{
 	 * 
 	 */
 //Constructor por defecto de Kromi nos entragara su posicion.
-	public Kromi () {
-		super();
+	public Kromi (int fila, int columna) {
+		super(fila, columna);
 	}
 //Constructor de Kromi contiene todos los atributos, inclusive los heredados.	
 	public Kromi(int cantOcupantes, String fechaIngresoInstitucion, 
-			int anoFabricacion, String marca) {
-		super(cantOcupantes, fechaIngresoInstitucion);
+			int anoFabricacion, String marca, int fila, int columna) {
+		super(cantOcupantes, fechaIngresoInstitucion, fila, columna);
 		this.anoFabricacion = anoFabricacion;
 		this.marca = marca;
 		
@@ -55,8 +57,16 @@ public class Kromi extends Carro{
 	public String toString() {
 		return "Kromi [anoFabricacion=" + anoFabricacion + ", marca=" + marca + "]";
 	}
-	
-	
+	/**
+	 *  Metodo extendido desde la Interfaz, imprimeObjeto()
+	 *  metodo que permite imprimir un string, segun la clase de objeto
+	 *  para Kromi imprime K.
+	 * @return K;
+	 */
+	public String imprimeObjeto() {
+		String K ="[ K ]";
+		return K;
+	}
 	//
 }
 

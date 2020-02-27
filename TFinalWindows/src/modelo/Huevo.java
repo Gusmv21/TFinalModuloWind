@@ -3,11 +3,13 @@
  */
 package modelo;
 
+import interfaces.IImprimeObjeto;
+
 /**
  * @author Gonzalo Guzman/Gustavo Morales/ Paolo Mancini /Sebastian Ramirez 
  * Clase Huevo.
  */
-public class Huevo {
+public class Huevo implements IImprimeObjeto {
 	private int fila;
 	private int columna;
 	private int puntaje;
@@ -55,5 +57,16 @@ public class Huevo {
 	public String toString() {
 		return "Huevo [fila=" + fila + ", columna=" + columna + ", puntaje=" + puntaje + "]";
 	}
+	/**
+	 *  Metodo extendido desde la Interfaz, imprimeObjeto()
+	 *  metodo que permite imprimir un string, segun la clase de objeto
+	 *  para Huevo imprime H.
+	 * @return H;
+	 */
+	public String imprimeObjeto() {
+		String H ="[ H ]";
+		return H;
+	}
+	
 	
 }

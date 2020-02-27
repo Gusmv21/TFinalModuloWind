@@ -3,51 +3,130 @@
  */
 package modelo;
 
-
-
-import modelo.Carro;
-import modelo.Huevo;
+import modelo.*;
 
 /**
  * @author Gonzalo Guzman/Gustavo Morales/ Paolo Mancini /Sebastian Ramirez 
  * Clase Tablero.
- * atributos y constantes de la Clase.
+ * Atributos tablero.
  */
 public class Tablero {
-	private String[][]tablero;
-	private Carro carro;
-	private Huevo huevo;
-	public static final int TAM_TABLERO_DEFAULT =15;//Constante que define el valor de columnas y filas del tablero = 15.
-	public static final int CANT_MAX_KROMI = 3;
-	public static final int CANT_MAX_CAGUANO = 5;
-	public static final int CANT_MAX_TRUPALLA = 10;
-	public static final int CANT_MAX_CARROS = 18;
+	private Object[][] tablero;
 	
 	/**
-	 *  Constructor del objeto Tablero.
-	 * @param tablero;  es la matriz que define el tamaño del tablero
-	 * @param Carro; son los objetos carro que seran creados en el tablero
-	 * @param Huevo; son los objetos huevo que seran creados en el tablero no se si el huevo de adiciona aqui o en el ejecutable
+	 *  Constructor del objeto Tablero 
 	 */	
-//Constructor por defecto de tablero
-	
 	public Tablero() {
-		tablero = new String[TAM_TABLERO_DEFAULT][TAM_TABLERO_DEFAULT];
-		carro = new Carro();
-		//huevo = new Huevo();// nose si es así o si tiene que pasar fila y columna por el constructor
+		tablero = new Object[15][15];
 	}
-
-//metodo inicial para determinar si el espacio esta ocupado con el disparo.
-	public boolean espacioOcupado(int fila, int columna) {	
-		boolean espacioLibre = false;
+	/**
+	 * Metodo crearCarro()
+	 * metodo que permite crear Carros de tipo Kromi, Trupalla y Caguano.
+	 * 
+	 */	
+	
+	public void iniciaTablero() {
+		for (int i = 0; i < 15; i++) {
+			for (int j = 0; j < 15; j++) {
+				tablero[i][j] = "[ _ ]";
+			}	
+		}
+	}
+		
+	public void crearCarro() {
+		//crear subclase de la clase carro y asignarla al tablero
+		int filaK = (int)(Math.random()*12);
+		int fila = (int)(Math.random()*15);
+		int columna = (int)(Math.random()*15);
+		int columnaC = (int)(Math.random()*14);
+		Kromi k1 = new Kromi(filaK, columna);
+		Kromi k2 = new Kromi(filaK, columna);
+		Kromi k3 = new Kromi(filaK, columna);
+		Caguano c = new Caguano(fila, columnaC);
+		Trupalla t = new Trupalla(fila,columna);
+		
+//		for (int i = 0; i < tablero.length; i++) {
+//			for (int j = 0; j < tablero.length; j++) {
+//				if (tablero[i][j].equals("[ _ ]") && tablero[i + 1][j].equals("[ _ ]") && 
+//						tablero[i + 2][j].equals("[ _ ]");
+//				}
+//			}
+//		}
+//		
+			
+//		} 
+		for (int i = 0; i < 3; i++) {	
+			while (!verificaEspacio()) {
+				tablero[filaK][columna] = k1.imprimeObjeto();
+				tablero[filaK+1][columna] = k1.imprimeObjeto();
+				tablero[filaK+2][columna] = k1.imprimeObjeto();
+			}
+		}
+		for (int i = 0; i < 5; i++) {
+			while (!verificaEspacio()) {
+				tablero[fila][columnaC] = c.imprimeObjeto();
+				tablero[fila][columnaC+1] = c.imprimeObjeto();
+			}
+		}
+		for (int i = 0; i < 10; i++) {
+			while (!verificaEspacio()) {
+				tablero[fila][columna] = t.imprimeObjeto();
+			}
+		}
+	}
+	
+	public boolean verificaEspacio() {
+		
 		for (int i = 0; i < tablero.length; i++) {
 			for (int j = 0; j < tablero.length; j++) {
-				//if (carro.getFila().equals(new Huevo(fila)) && carro.getColumna().Equals(new Huevo(columna))) {
-					espacioLibre = true;
+				if (tablero[i][j]==null) {
+					return true;
 				}
-				
 			}
-			
-		return espacioLibre ;		
+		}
+		return false;
 	}
+	
+	/**
+	 *  Metodo lanzarHuevo()
+	 *  metodo que permite lanzar huevos dentro del tablero
+	 * @param 
+	 * @param 
+	 * @param 
+	 * @param 
+	 */
+	public void lanzarHuevo() {
+		
+	}
+	/**
+	 *  Metodo mostrarMatriz()
+	 *  metodo que imprime por consola  el tablero de juego.
+	 * @param 
+	 * @param 
+	 * @param 
+	 * @param 
+	 */
+	public void mostrarMatriz() {
+		
+		for (int i = 0; i < tablero.length; i++) {
+			for (int j = 0; j < tablero.length; j++) {
+				System.out.print(tablero[i][j]);
+			}
+			System.out.println("");
+		}
+		
+	}
+	/**
+	 *  Metodo calcularPuntaje
+	 *  metodo que permite sumar la cantidad de puntaje que obtuvo el jugador en el trasncurso
+	 *  del juego. kromi 3 puntos/Kromi completa = 10 puntos. Caguano 2 puntos/ Caguano completo = 7 puntos.
+	 *  Trupalla completa 1 punto.
+	 * @param 
+	 * @param 
+	 * @param 
+	 * @param 
+	 */
+	public void calcularPuntaje() {
+		
+	}	
 }
